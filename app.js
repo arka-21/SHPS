@@ -2,7 +2,7 @@ const form = document.getElementById('predictForm');
 const resultDiv = document.getElementById('result');
 const clearBtn = document.getElementById('clearBtn');
 
-const BACKEND_URL = 'http://localhost:3000';
+const BACKEND_URL = 'https://shps.onrender.com/';
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
