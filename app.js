@@ -3,7 +3,7 @@ const resultDiv = document.getElementById('result');
 const clearBtn = document.getElementById('clearBtn');
 
 // NO trailing slash here
-const BACKEND_URL = 'https://shps.onrender.com';
+const BACKEND_URL = 'https://shps.onrender.com/';
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -27,7 +27,6 @@ form.addEventListener('submit', async (e) => {
     });
 
     if (!resp.ok) {
-      // try to capture any error body text from the server for debugging
       let text = await resp.text().catch(()=>`(no body, status ${resp.status})`);
       const errMsg = `Server responded with ${resp.status}. Body: ${text}`;
       console.error(errMsg);
@@ -38,7 +37,6 @@ form.addEventListener('submit', async (e) => {
     const data = await resp.json();
     resultDiv.innerHTML = `<strong>Risk:</strong> ${data.risk} <br><strong>Score:</strong> ${data.score} <br><strong>Suggestion:</strong> ${data.suggestion}`;
   } catch (err) {
-    // show the real error in console and to the user
     console.error('Fetch error:', err);
     resultDiv.textContent = 'Failed to get prediction. See console for details.';
   }
