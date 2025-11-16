@@ -3,7 +3,7 @@ const resultDiv = document.getElementById('result');
 const clearBtn = document.getElementById('clearBtn');
 
 // NO trailing slash here
-const BACKEND_URL = 'https://shps.onrender.com/';
+const BACKEND_URL = 'https://shps.onrender.com';
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
